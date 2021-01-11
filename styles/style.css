@@ -30,6 +30,14 @@ main {
     margin-bottom: calc(var(--footer-height));
 }
 
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: calc(var(--footer-height));
+}
+
 section {
     background-color: var(--color5);
     width: 1000px;
