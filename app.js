@@ -6,9 +6,9 @@ const quizButton = document.getElementById('startQuiz');
 let correctAnswers = 0;
 // set event listeners to update state and DOM
 quizButton.addEventListener('click', () => {
-    //promt alert
+    
     alert('Welcome to the WSL Quiz!');
-    //promt confirm
+    
     const readyForTest = confirm('Are you ready to test your knowledge?');
 
     if (!readyForTest) return;
@@ -27,6 +27,15 @@ quizButton.addEventListener('click', () => {
     else {
         console.log('wrong');
     }
-
     
+    const question2 = prompt(firstName + lastName + ', is $100,000 is the amount of money the event winners win');
+
+    if (checkIfYes(question2)) {
+        console.log('nioce');
+        ++correctAnswers;
+        console.log(correctAnswers);
+    }
+    else {
+        console.log('wrong');
+    }
 });
