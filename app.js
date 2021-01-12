@@ -3,6 +3,7 @@ import { checkIfYes } from './utils.js';
     
 // initialize state
 const quizButton = document.getElementById('startQuiz');
+const results = document.getElementById('secretDiv');
 let correctAnswers = 0;
 // set event listeners to update state and DOM
 quizButton.addEventListener('click', () => {
@@ -17,25 +18,23 @@ quizButton.addEventListener('click', () => {
     
     const lastName = prompt('Please enter your last name.');
     
-    const question1 = prompt(firstName.charAt(0).toUpperCase() + ' ' + lastName.charAt(0).toUpperCase() + ', was the World Surf League founded in 1976?');
+    const question1 = prompt(firstName + ' ' + lastName + ', was the World Surf League founded in 1976?');
     
     if (checkIfYes(question1)) {
-        console.log('nioce');
         ++correctAnswers;
-        console.log(correctAnswers);
-    }
-    else {
-        console.log('wrong');
     }
     
-    const question2 = prompt(firstName + lastName + ', is $100,000 is the amount of money the event winners win');
+    const question2 = prompt(firstName + ', is $100,000 is the amount of money the event winners win');
 
     if (checkIfYes(question2)) {
-        console.log('nioce');
         ++correctAnswers;
-        console.log(correctAnswers);
     }
-    else {
-        console.log('wrong');
+
+    const question3 = prompt('Was Caroline Marks the top womans surfer in 2019?');
+
+    if (!checkIfYes(question3)) {
+        ++correctAnswers;
     }
+
+    results.textContent = firstName.toUpperCase(0) + ' ' + lastName.toUpperCase(0) + '! you got ' + correctAnswers + ' right!';
 });
