@@ -1,4 +1,12 @@
-
+body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
 body {
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
     /* --color1: hsla(349, 69%, 76%, 1);
@@ -28,6 +36,17 @@ main {
     justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
+}
+
+.ocean{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    margin-bottom: calc(var(--footer-height));
+    background: white, url(https://www.worldsurfleague.com/cache/img/share-default_1610061703.jpg);
+    
+    
 }
 
 article {

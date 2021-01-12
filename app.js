@@ -1,5 +1,6 @@
 // import functions and grab DOM elements
-
+import { checkIfYes } from './utils.js';
+    
 // initialize state
 const quizButton = document.getElementById('startQuiz');
 let correctAnswers = 0;
@@ -13,10 +14,19 @@ quizButton.addEventListener('click', () => {
     if (!readyForTest) return;
 
     const firstName = prompt('Please enter your first name.');
-    console.log(firstName);
+    
     const lastName = prompt('Please enter your last name.');
-    console.log(lastName);
+    
+    const question1 = prompt(firstName.charAt(0).toUpperCase() + ' ' + lastName.charAt(0).toUpperCase() + ', was the World Surf League founded in 1976?');
+    
+    if (checkIfYes(question1)) {
+        console.log('nioce');
+        ++correctAnswers;
+        console.log(correctAnswers);
+    }
+    else {
+        console.log('wrong');
+    }
 
-  
+    
 });
-
